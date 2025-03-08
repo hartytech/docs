@@ -4,12 +4,12 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import {themes as prismThemes, themes} from 'prism-react-renderer';
 
 // This runs in Node.js
 
 const config = {
-  title: 'Medibound',
+  title: 'Under Constructon',
   tagline: 'Simplifying Healthcare, Empowering You',
   favicon: 'img/favicon.ico',
 
@@ -38,6 +38,7 @@ const config = {
     locales: ['en'],
   },
 
+
   presets: [
     [
       'classic',
@@ -50,21 +51,6 @@ const config = {
           editUrl:
             'https://github.com/medibound/docs/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/medibound/docs/tree/main/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -75,6 +61,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        respectPrefersColorScheme: true
+      },
       // Replace with your project's social card
       image: 'img/medibound-social-card.jpg',
       navbar: {
@@ -114,7 +103,10 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        logo: {
+          alt: 'Medibound Logo',
+          src: 'img/logo.svg',
+        },
         links: [
           {
             title: 'Docs',
@@ -149,11 +141,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Medibound, Inc. Built with Docusaurus.`,
+        copyright: `© ${new Date().getFullYear()} Medibound, Inc.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.vsDark,
       },
     }),
 };
